@@ -1,0 +1,58 @@
+.page-pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 348px;
+  border-bottom: 1px solid #D9D9D9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.24px;
+
+
+  & li {
+
+    &::marker {
+      font-size: 0;
+    }
+  }
+
+  &__item {
+    padding-bottom: 10px;
+    width: 40px;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+
+  &-active {
+    border-color: #FFB13D;
+    color: #FFB13D;
+  }
+
+  &__next,
+  &__prev {
+    cursor: pointer;
+
+    & svg {
+      vertical-align: text-top;
+    }
+  }
+
+  &__next {
+
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__break {
+
+    & a {
+      vertical-align: super;
+    }
+  }
+}

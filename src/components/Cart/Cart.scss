@@ -1,0 +1,16 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: ghostwhite;
+  padding: 25px;
+  border-radius: 15px;
+
+  &__sum {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

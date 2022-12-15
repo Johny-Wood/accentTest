@@ -1,0 +1,44 @@
+.filter {
+  padding: 30px;
+  max-width: 300px;
+  width: 100%;
+  height: fit-content;
+  background-color: ghostwhite;
+  border-radius: 7px;
+  font-size: 20px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  & .filter-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 27px;
+      font-weight: 600px;
+    }
+
+    &__checkbox {
+      margin-left: 10px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    // justify-content: space-between;
+  }
+
+  &__button {
+    padding: 5px 20px;
+    cursor: pointer;
+    max-width: 200px;
+    width: 100%;
+  }
+}

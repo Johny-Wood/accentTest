@@ -1,0 +1,23 @@
+.order-placed-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  max-width: 300px;
+  height: 20vh;
+  background-color: ghostwhite;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  &__text {
+    display: block;
+    margin-top: 25%;
+  }
+
+  &__close-btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

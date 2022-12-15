@@ -1,0 +1,26 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 185px);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(158px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, minmax(187px, 1fr));
+    }
+
+    @media screen and (max-width: 425px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__page-pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
