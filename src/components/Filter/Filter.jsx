@@ -3,12 +3,24 @@ import { useSelector } from 'react-redux';
 import { getFilteredProducts } from '../../helpers/getFilteredProducts';
 import './Filter.scss';
 
-const Filter = ({ items, onFilter, onFilterReset }) => {
+const Filter = ({ items, onFilter, onFilterReset, catalogFiltersQuery }) => {
   const products = useSelector((state) => state.products);
   const [checkedBrandsState, setCheckedBrandsState] = useState([]);
 
   useEffect(() => {
-    setCheckedBrandsState(new Array(items.length).fill(false));
+    const arr = new Array(items.length).fill(false);
+
+    if (catalogFiltersQuery) {
+      const catalogFiltersQueryArr = catalogFiltersQuery.split(',');
+
+      catalogFiltersQueryArr.forEach((el, i) => {
+        arr[Number(el) - 1] = true;
+      });
+
+      setCheckedBrandsState(arr);
+    };
+
+    setCheckedBrandsState(arr);
   }, [items]);
 
   const handleOnChange = (position) => {

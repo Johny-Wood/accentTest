@@ -96,7 +96,7 @@ const CatalogView = () => {
           items={brands}
           onFilter={handleFilter}
           onFilterReset={handleFilterReset}
-        // catalogFiltersQuery=
+          catalogFiltersQuery={catalogFiltersQuery}
         />
         <Catalog
           products={currentProducts}
