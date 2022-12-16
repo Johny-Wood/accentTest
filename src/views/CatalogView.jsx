@@ -44,9 +44,7 @@ const CatalogView = () => {
       };
     };
 
-
     setCurrentProducts(filteredProducts.slice(0, maxCardsPerPage));
-
   }, [products]);
 
   useEffect(() => {
@@ -55,7 +53,7 @@ const CatalogView = () => {
       setSearchParams(searchParams);
     } else {
       handleChangePage({
-        newCardIndex: getCardsOffset(products.length, maxCardsPerPage, catalogPageQuery),
+        newCardIndex: getCardsOffset(filteredProducts.length, maxCardsPerPage, catalogPageQuery),
         newPage: catalogPageQuery
       });
     };
@@ -66,13 +64,15 @@ const CatalogView = () => {
     const newCards = filteredProducts.slice(newCardIndex, newCardIndex + maxCardsPerPage);
 
     setCurrentProducts(newCards);
-    if (newCardIndex >= maxCardsPerPage) {
-      searchParams.set("p", newPage);
+
+    if (newCardIndex < maxCardsPerPage) {
+      searchParams.set("p", 0);
       setSearchParams(searchParams);
     } else {
       searchParams.set("p", newPage);
       setSearchParams(searchParams);
     };
+
     window.scrollTo(0, 0);
   };
 
